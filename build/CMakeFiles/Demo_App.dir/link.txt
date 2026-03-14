@@ -1,0 +1,1 @@
+/usr/bin/cc -Wl,--dependency-file=CMakeFiles/Demo_App.dir/link.d CMakeFiles/Demo_App.dir/main.c.o -o Demo_App  libDemoLibrary.a
