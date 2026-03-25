@@ -14,15 +14,19 @@ jobs:
       - name: Load ESP-IDF
         run: |
           source ~/esp-idf/export.sh
-
+      - name: Clean build
+        run: |
+          rm -rf build
       - name: Build
-        run: idf.py build
-
+        run: |
+          . $HOME/esp-idf/export.sh
+          idf.py build
+          
       - name: Flash ESP32
         run: idf.py -p /dev/ttyACM0 flash
-
+        
       - name: Wait for boot
         run: sleep 3
-
+        
       - name: Run pytest
         run: pytest -v -s test_v2.py
