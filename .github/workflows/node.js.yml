@@ -2,7 +2,7 @@ name: ESP32 Hardware Test
 
 on:
   push:
-
+    branches: [ "CICD_Pytest" ]
 jobs:
   test-on-hardware:
     runs-on: self-hosted
