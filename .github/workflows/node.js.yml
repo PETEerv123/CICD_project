@@ -1,0 +1,12 @@
+
+name: Helloworld # tên pipeline
+
+on: #Điều kiện kích hoạt
+  push: # điều kiện kích hoạt ở đây là push cho branch có tên là Test
+    branches: [ "Test" ]
+
+jobs:
+  Hellworld: #Job ở đây là Helloworld
+    runs-on: ubuntu-latest # nó sẽ chạy trên hệ điều hành ubuntu của chính nó
+    steps: #các bước thực thi
+      - run : echo "Hello world"  #in ra từ hello World
