@@ -1,7 +1,0 @@
-/home/tathuan/Project_A/embedded_project/output_package/include/DemoLibrary.h
-/home/tathuan/Project_A/embedded_project/output_package/lib/libDemoLibrary.a
-/home/tathuan/Project_A/embedded_project/output_package/bin/Demo_App
-/home/tathuan/Project_A/embedded_project/output_package/lib/cmake/DemoLibrary/DemoLibraryExport.cmake
-/home/tathuan/Project_A/embedded_project/output_package/lib/cmake/DemoLibrary/DemoLibraryExport-noconfig.cmake
-/home/tathuan/Project_A/embedded_project/output_package/lib/cmake/DemoLibrary/DemoLibraryConfig.cmake
-/home/tathuan/Project_A/embedded_project/output_package/lib/cmake/DemoLibrary/DemoLibraryConfigVersion.cmake

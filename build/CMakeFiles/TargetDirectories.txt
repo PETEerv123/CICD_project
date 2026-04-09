@@ -1,8 +1,0 @@
-/home/tathuan/Project_A/embedded_project/build/CMakeFiles/DemoLibrary.dir
-/home/tathuan/Project_A/embedded_project/build/CMakeFiles/Demo_App.dir
-/home/tathuan/Project_A/embedded_project/build/CMakeFiles/edit_cache.dir
-/home/tathuan/Project_A/embedded_project/build/CMakeFiles/rebuild_cache.dir
-/home/tathuan/Project_A/embedded_project/build/CMakeFiles/list_install_components.dir
-/home/tathuan/Project_A/embedded_project/build/CMakeFiles/install.dir
-/home/tathuan/Project_A/embedded_project/build/CMakeFiles/install/local.dir
-/home/tathuan/Project_A/embedded_project/build/CMakeFiles/install/strip.dir
