@@ -4,7 +4,7 @@
 #include "freertos/semphr.h"
 #include "freertos/task.h"
 #include "hal/spi_types.h"
-#include "soc/gpio_num.h"
+ 
 #include <stdio.h>
 #
 #define SCK_PIN GPIO_NUM_4
@@ -27,8 +27,8 @@ void app_main(void) {
   setup();
   while (1) {
     STM32_Begin_Get_Info(&STM32_Slave_handle);
-    // gpio_set_level(CS_PIN, 0);
+
     vTaskDelay(2000 / portTICK_PERIOD_MS);
-    // gpio_set_level(CS_PIN, 1);
+
   }
 }
