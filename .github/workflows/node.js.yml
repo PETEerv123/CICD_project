@@ -21,6 +21,7 @@ jobs:
         run: |
           rm -rf build
           rm -f sdkconfig
+          rm -f sdkconfig.old
 
       - name: Set target
         run: idf.py set-target esp32c3
