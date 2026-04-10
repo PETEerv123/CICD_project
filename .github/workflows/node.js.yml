@@ -3,20 +3,25 @@ name: ESP32 SPI Unit Test
 on:
   push:
     branches: [ "SPI_Unit_Test" ]
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        
-      - name: Load ESP-IDF
-        run: |
-          source ~/esp-idf/export.sh
+
+      - name: Setup ESP-IDF
+        uses: espressif/esp-idf-ci-action@v1
+        with:
+          esp_idf_version: v5.2
+
+      - name: Set target
+        run: idf.py set-target esp32
+
       - name: Clean build
-        run: |
-          rm -rf build
+        run: idf.py fullclean
+
       - name: Build
-        run: |
-          . $HOME/esp-idf/export.sh
-          idf.py build
+        run: idf.py build
