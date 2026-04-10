@@ -1,32 +1,30 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-name: CMake CI
+name: ESP-IDF CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "SPI_Unit_Test" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
 
-    - name: Install tools
-      run: |
-        sudo apt update
-        sudo apt install -y cmake build-essential
-    - name: Clean
-      run: rm -rf build
-    - name: Configure
-      run: cmake -S . -B build
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Build
-      run: cmake --build build
+      - name: Setup ESP-IDF
+        uses: espressif/esp-idf-ci-action@v1
+        with:
+          esp_idf_version: v5.3
+          target: esp32c3
 
-    - name: Install package
-      run: cmake --install build --prefix output_package
+      - name: Full clean
+        run: |
+          rm -rf build
+          idf.py fullclean || true
 
-    - name: Run example
-      run: ./output_package/bin/Demo_App
+      - name: Build project
+        run: |
+          idf.py set-target esp32c3
+          idf.py build
