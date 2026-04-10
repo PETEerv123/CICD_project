@@ -1,34 +1,28 @@
-name: ESP-IDF CI
+name: ESP32 Hardware Test
 
 on:
   push:
     branches: [ "SPI_Unit_Test" ]
 jobs:
-  build:
+  test-on-hardware:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install system dependencies
+      - name: Load ESP-IDF
         run: |
-          sudo apt update
-          sudo apt install -y git wget flex bison gperf python3 python3-pip python3-venv \
-            cmake ninja-build ccache libffi-dev libssl-dev dfu-util
-
-      - name: Set up ESP-IDF
-        uses: espressif/esp-idf-ci-action@v1
-        with:
-          esp_idf_version: v5.3   # Use a recent stable release, or 'latest'
-          target: esp32c3
-
-      - name: Clean previous build (optional)
+          source ~/esp-idf/export.sh
+      - name: Clean build
         run: |
-          rm -rf build sdkconfig
-
-      - name: Build project
+          rm -rf build
+      - name: Set target
         run: |
-          # idf.py will automatically use the environment set up by the action
-          idf.py set-target esp32c3   # optional if you already set target above
+          . $HOME/esp-idf/export.sh
+          idf.py set-target esp32
+      - name: Build
+        run: |
+          . $HOME/esp-idf/export.sh
           idf.py build
+          
