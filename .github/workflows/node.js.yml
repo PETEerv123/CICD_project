@@ -17,11 +17,11 @@ jobs:
         with:
           esp_idf_version: v5.2
 
-      - name: Set target
-        run: idf.py set-target esp32
-
       - name: Clean build
         run: idf.py fullclean
+
+      - name: Set target
+        run: idf.py set-target esp32c3
 
       - name: Build
         run: idf.py build
