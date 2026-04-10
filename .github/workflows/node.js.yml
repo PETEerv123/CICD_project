@@ -2,7 +2,7 @@ name: ESP32C3 SPI Unit Test
 
 on:
   push:
-    branches: [ "CICD_Pytest" ]
+    branches: [ "SPI_Unit_Test" ]
 
 jobs:
   build:
