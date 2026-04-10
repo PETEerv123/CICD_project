@@ -64,7 +64,7 @@ esp_err_t STM32_Slave_Init(STM32_Slave_handle_t *ctx, SPI_config *cfg) {
   cs_high(ctx);
   return err;
 }
-static esp_err_t SPI_init_bus(SPI_config *cfg, uint8_t max_transfer) {
+esp_err_t SPI_init_bus(SPI_config *cfg, uint8_t max_transfer) {
 
   esp_err_t ret;
   ESP_LOGI(tag, "Initializing bus SPI...");
@@ -83,7 +83,7 @@ static esp_err_t SPI_init_bus(SPI_config *cfg, uint8_t max_transfer) {
   ret = spi_bus_initialize(cfg->host, &buscfg, SPI_DMA_CH_AUTO);
   return ret;
 }
-static esp_err_t spi_add_device(STM32_Slave_handle_t *ctx, SPI_config *cfg) {
+esp_err_t spi_add_device(STM32_Slave_handle_t *ctx, SPI_config *cfg) {
   esp_err_t err;
   spi_device_interface_config_t devcfg = {
     .clock_speed_hz = SPI_Frequency,
