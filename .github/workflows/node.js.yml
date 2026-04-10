@@ -9,22 +9,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Setup ESP-IDF
         uses: espressif/esp-idf-ci-action@v1
         with:
           esp_idf_version: v5.2
 
-      - name: Force clean
+      - name: Clean everything
         run: |
-          rm -rf build
-          rm -f sdkconfig
-          rm -f sdkconfig.old
+          rm -rf build sdkconfig sdkconfig.old
+          idf.py fullclean
 
-      - name: Set target
-        run: idf.py set-target esp32c3
+      - name: Set target to esp32c3
+        run: |
+          unset IDF_TARGET
+          idf.py set-target esp32c3
 
       - name: Build
         run: idf.py build
