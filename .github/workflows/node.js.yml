@@ -4,13 +4,12 @@ on:
   push:
     branches: [ "SPI_Unit_Test" ]
 jobs:
-  test-on-hardware:
-    runs-on: ubunu-latest
-
+  build:
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
-
+        
       - name: Load ESP-IDF
         run: |
           source ~/esp-idf/export.sh
