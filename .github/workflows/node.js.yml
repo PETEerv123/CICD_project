@@ -16,10 +16,10 @@ jobs:
           esp_idf_version: v5.2
           target: esp32c3
 
-      - name: Clean
+      - name: Clean broken cache
         run: |
           rm -rf build
-          rm -f sdkconfig*
+          find . -name "CMakeCache.txt" -delete
 
       - name: Build
         run: idf.py build
