@@ -6,7 +6,7 @@
 #include "driver/gpio.h"
 #include "driver/spi_master.h"
 /// Configuration of spi_slave
-#define SPI_Frequency 1000000 // 1MHz
+#define SPI_Frequency 1* 1000 * 1000 // 1MHz
 typedef struct {
   gpio_num_t SCK;
   gpio_num_t MOSI;
@@ -21,4 +21,5 @@ esp_err_t STM32_Slave_Init(STM32_Slave_handle_t *ctx, SPI_config *cfg);
 
 esp_err_t SPI_init_bus(SPI_config *cfg, uint8_t max_transfer);
 esp_err_t spi_add_device(STM32_Slave_handle_t *ctx, SPI_config *cfg);
-void STM32_Begin_Get_Info(STM32_Slave_handle_t *ctx);
+
+esp_err_t STM32_Begin_Get_Info(STM32_Slave_handle_t *ctx);

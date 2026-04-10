@@ -1,0 +1,23 @@
+name: ESP32 SPI Unit Test
+
+on:
+  push:
+    branches: [ "SPI_Unit_Test" ]
+jobs:
+  test-on-hardware:
+    runs-on: ubunu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Load ESP-IDF
+        run: |
+          source ~/esp-idf/export.sh
+      - name: Clean build
+        run: |
+          rm -rf build
+      - name: Build
+        run: |
+          . $HOME/esp-idf/export.sh
+          idf.py build
