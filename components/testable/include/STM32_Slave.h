@@ -20,6 +20,6 @@ typedef struct STM32_Slave_Context_t *STM32_Slave_handle_t;
 esp_err_t STM32_Slave_Init(STM32_Slave_handle_t *ctx, SPI_config *cfg);
 
 esp_err_t SPI_init_bus(SPI_config *cfg, uint8_t max_transfer);
-esp_err_t spi_add_device(STM32_Slave_handle_t *ctx, SPI_config *cfg);
+esp_err_t SPI_add_device(STM32_Slave_handle_t *ctx, SPI_config *cfg);
 
 esp_err_t STM32_Begin_Get_Info(STM32_Slave_handle_t *ctx);
