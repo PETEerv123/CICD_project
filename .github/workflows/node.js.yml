@@ -21,8 +21,7 @@ jobs:
 
       - name: Full clean
         run: |
-          rm -rf build
-          idf.py fullclean || true
+          idf.py fullclean
 
       - name: Build project
         run: |
