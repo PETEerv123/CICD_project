@@ -83,7 +83,7 @@ esp_err_t SPI_init_bus(SPI_config *cfg, uint8_t max_transfer) {
   ret = spi_bus_initialize(cfg->host, &buscfg, SPI_DMA_CH_AUTO);
   return ret;
 }
-esp_err_t spi_add_device(STM32_Slave_handle_t *ctx, SPI_config *cfg) {
+esp_err_t SPI_add_device(STM32_Slave_handle_t *ctx, SPI_config *cfg) {
   esp_err_t err;
   spi_device_interface_config_t devcfg = {
     .clock_speed_hz = SPI_Frequency,
