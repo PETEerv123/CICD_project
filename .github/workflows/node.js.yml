@@ -13,17 +13,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup ESP-IDF
+      - name: Build with ESP-IDF
         uses: espressif/esp-idf-ci-action@v1
         with:
           esp_idf_version: v5.3
           target: esp32c3
-
-      - name: Full clean
-        run: |
-          idf.py fullclean
-
-      - name: Build project
-        run: |
-          idf.py set-target esp32c3
-          idf.py build
+          command: |
+            idf.py fullclean
+            idf.py set-target esp32c3
+            idf.py build
