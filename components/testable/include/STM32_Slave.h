@@ -7,6 +7,14 @@
 #include "driver/spi_master.h"
 /// Configuration of spi_slave
 #define SPI_Frequency 1* 1000 * 1000 // 1MHz
+
+typedef struct STM32_Slave_Register{
+  uint8_t addr_reg;
+  uint8_t hummidity;
+  uint8_t termperature;
+}STM32_Slave_Register;
+
+
 typedef struct {
   gpio_num_t SCK;
   gpio_num_t MOSI;
@@ -15,11 +23,12 @@ typedef struct {
   spi_host_device_t host; // enum host 0 : defualt , 1 : user
 } SPI_config;
 
+
 typedef struct STM32_Slave_Context_t *STM32_Slave_handle_t;
 
 esp_err_t STM32_Slave_Init(STM32_Slave_handle_t *ctx, SPI_config *cfg);
 
-esp_err_t SPI_init_bus(SPI_config *cfg, uint8_t max_transfer);
+esp_err_t SPI_init_bus(STM32_Slave_handle_t *ctx, uint8_t max_transfer);
 esp_err_t SPI_add_device(STM32_Slave_handle_t *ctx, SPI_config *cfg);
 
 esp_err_t STM32_Begin_Get_Info(STM32_Slave_handle_t *ctx);
