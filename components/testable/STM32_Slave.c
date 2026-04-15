@@ -51,7 +51,7 @@ esp_err_t STM32_Slave_Init(STM32_Slave_handle_t *ctx, SPI_config *cfg) {
   if (err != ESP_OK){
     ESP_LOGE(tag, "Failed to initialize SPI bus: %s", esp_err_to_name(err));
     free(*ctx);
-    free
+    spi_bus_remove_device((*ctx)->spi_handle);
     return err;
   }
   ESP_LOGI(tag, "SPI bus initialized successfully\n"); 
@@ -82,7 +82,7 @@ esp_err_t SPI_init_bus(SPI_config *cfg, uint8_t max_transfer) {
                              .quadwp_io_num = -1,
                              .quadhd_io_num = -1};
 
-  ret = spi_bus_initialize(&(*cfg->host), &buscfg, SPI_DMA_CH_AUTO);
+  ret = spi_bus_initialize(&((*cfg)->host), &buscfg, SPI_DMA_CH_AUTO);
   return ret;
 }
 esp_err_t SPI_add_device(STM32_Slave_handle_t *ctx, SPI_config *cfg) {
@@ -102,8 +102,6 @@ esp_err_t STM32_Begin_Get_Info(STM32_Slave_handle_t *ctx) {
   esp_err_t err;
   uint8_t tx[2] = {0x37, 0x80};
   uint8_t rx[2] = {0};
-  spi_transaction_t trans;
-  memset(&trans, 0, sizeof(trans));
   spi_transaction_t trans = {
       .length = 8 * 2,
       .flags = 0,
@@ -131,17 +129,15 @@ esp_err_t STM32_Slave_Set_Up(STM32_Slave_handle_t *ctx) {
 esp_err_t Send_STM32_Slave_Register(STM32_Slave_handle_t *ctx,uint8_t *data, size_t len) {
   esp_err_t ret;
   // Implementation for sending register datad
-  spi_transaction_t trans;
-  memset(&trans, 0, sizeof(trans));
   spi_transaction_t trans = {
-      .length = 8 * sizeof(data),
+      .length = 8 * len,
       .flags = 0,
-      .tx_buffer = tx,
+      .tx_buffer = data,
       .rx_buffer = NULL,
   };
-
+  printfnumbinary(data, len);
   cs_low(ctx);
-  err = spi_device_transmit(((*ctx)->spi_handle), &trans);
+  ret = spi_device_transmit(((*ctx)->spi_handle), &trans);
   cs_high(ctx);
   return ret;
 }
