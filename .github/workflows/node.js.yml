@@ -10,10 +10,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Load ESP-IDF
-        run: |
-          source ~/esp-idf/export.sh
       - name: Clean build
         run: |
           rm -rf build
