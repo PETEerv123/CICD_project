@@ -20,7 +20,7 @@ jobs:
 
       - name: Build and Flash
         run: |
-          source ~/.espressif/tools/activate_idf_v5.5.4.sh
+          . /mnt/hdd_WD10JPVT_1TB/p256GB/share-resource/.espressif/v5.5.4/esp-idf/export.sh
 
           idf.py set-target esp32s3
           idf.py build
