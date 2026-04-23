@@ -20,7 +20,7 @@ jobs:
       - name: Build
         run: |
           . $HOME/esp-idf/export.sh
-          idf.py build
+          idf.py set-target esp32s3 && idf.py build
           
       - name: Flash ESP32
         run: idf.py -p /dev/ttyACM0 flash
