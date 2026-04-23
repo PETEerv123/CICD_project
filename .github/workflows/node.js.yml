@@ -19,9 +19,9 @@ jobs:
           rm -rf build
       - name: Build
         run: |
-          . $HOME/esp-idf/export.sh
+          cd ~
+          cd .. && . /mnt/hdd_WD10JPVT_1TB/p256GB/share-resource/.espressif/v5.5.4/esp-idf/export.sh
           idf.py set-target esp32s3 && idf.py build
-          
       - name: Flash ESP32
         run: idf.py -p /dev/ttyACM0 flash
         
