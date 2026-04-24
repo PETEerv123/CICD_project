@@ -1,7 +1,8 @@
 name: ESP32 test
+
 on:
   push:
-    branches: [ "CICD_Pytest" ]
+    branches: ["CICD_Pytest"]
 
 jobs:
   test-on-hardware:
@@ -10,21 +11,25 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Install ESP-IDF tools
+
+      - name: Setup ESP-IDF
         run: |
-          /mnt/hdd_WD10JPVT_1TB/p256GB/share-resource/.espressif/tools/python/v5.5.4/venv/bin/python \
-          /mnt/hdd_WD10JPVT_1TB/p256GB/share-resource/.espressif/v5.5.4/esp-idf/tools/idf_tools.py install
+          export IDF_TOOLS_PATH=$HOME/.espressif
+          . /mnt/hdd_WD10JPVT_1TB/p256GB/share-resource/.espressif/v5.5.4/esp-idf/export.sh
+
+          echo "IDF_PATH=$IDF_PATH"
+          echo "PATH=$PATH"
 
       - name: Clean build
         run: rm -rf build
 
       - name: Build and Flash
         run: |
+          export IDF_TOOLS_PATH=$HOME/.espressif
           . /mnt/hdd_WD10JPVT_1TB/p256GB/share-resource/.espressif/v5.5.4/esp-idf/export.sh
 
           idf.py set-target esp32s3
           idf.py build
-
           idf.py -p /dev/ttyACM0 flash
 
       - name: Wait for boot
