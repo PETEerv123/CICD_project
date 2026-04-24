@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Build and Flash
         run: |
-          . /mnt/hdd_WD10JPVT_1TB/p256GB/share-resource/.espressif/v5.5.4/esp-idf/export.sh
+          #. /mnt/hdd_WD10JPVT_1TB/p256GB/share-resource/.espressif/v5.5.4/esp-idf/export.sh
 
           idf.py set-target esp32s3
           idf.py build
