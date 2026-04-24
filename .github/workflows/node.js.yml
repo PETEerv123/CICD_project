@@ -16,6 +16,8 @@ jobs:
         run: |
           chmod +x /mnt/hdd_WD10JPVT_1TB/p256GB/share-resource/.espressif/tools/activate_idf_v5.5.4.sh
           chmod +x /mnt/hdd_WD10JPVT_1TB/p256GB/share-resource/.espressif/v5.5.4/esp-idf/export.sh
+          /mnt/hdd_WD10JPVT_1TB/p256GB/share-resource/.espressif/tools/python/v5.5.4/venv/bin/python \
+          /mnt/hdd_WD10JPVT_1TB/p256GB/share-resource/.espressif/v5.5.4/esp-idf/tools/idf_tools.py install
       - name: Build and Flash
         shell: bash
         run: |
