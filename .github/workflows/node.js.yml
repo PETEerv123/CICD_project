@@ -11,6 +11,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: install tool
+        shell: bash
+        run: |
+          chmod +x /mnt/hdd_WD10JPVT_1TB/p256GB/share-resource/.espressif/tools/activate_idf_v5.5.4.sh
+          chmod +x /mnt/hdd_WD10JPVT_1TB/p256GB/share-resource/.espressif/v5.5.4/esp-idf/export.sh
       - name: Build and Flash
         shell: bash
         run: |
