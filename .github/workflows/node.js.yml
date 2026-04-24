@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Build and Flash
         run: |
-         
+          source "/mnt/hdd_WD10JPVT_1TB/p256GB/share-resource/.espressif/tools/activate_idf_v5.5.4.sh"
           idf.py set-target esp32s3
           idf.py build
           idf.py -p /dev/ttyACM0 flash
