@@ -17,7 +17,6 @@ jobs:
         run: |
           export IDF_PATH=/mnt/hdd_WD10JPVT_1TB/p256GB/share-resource/.espressif/v5.5.4/esp-idf
           export IDF_TOOLS_PATH=/mnt/hdd_WD10JPVT_1TB/p256GB/share-resource/.espressif
-      
           export PATH=$IDF_TOOLS_PATH/tools/python/v5.5.4/venv/bin:$PATH
           export PATH=$IDF_TOOLS_PATH/tools/xtensa-esp-elf/bin:$PATH
           export PATH=$IDF_TOOLS_PATH/tools/esp-clang/bin:$PATH
