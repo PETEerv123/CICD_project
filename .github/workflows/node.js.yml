@@ -12,8 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build and Flash (source env and cd project)
-        shell: bash
+      - name: Build and Flash
         run: |
           export IDF_PATH=/mnt/hdd_WD10JPVT_1TB/p256GB/share-resource/.espressif/v5.5.4/esp-idf
           export IDF_TOOLS_PATH=/mnt/hdd_WD10JPVT_1TB/p256GB/share-resource/.espressif
