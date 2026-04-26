@@ -11,14 +11,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Build and Flash
+
+      - name: Build and Flash (source env and cd project)
         shell: bash
         run: |
-          source /mnt/hdd_WD10JPVT_1TB/p256GB/share-resource/.espressif/tools/activate_idf_v5.5.4.sh -e
+          source /mnt/hdd_WD10JPVT_1TB/p256GB/share-resource/.espressif/tools/activate_idf_v5.5.4.sh
+          cd $HOME/esp-idf-project/CICD_Pytest
+
+          # set target, build, flash
           idf.py set-target esp32s3
           idf.py build
           idf.py -p /dev/ttyACM0 flash
+
       - name: Wait for boot
         run: sleep 5
-
-
