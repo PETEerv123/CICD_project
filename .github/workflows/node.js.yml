@@ -13,25 +13,19 @@ jobs:
         uses: actions/checkout@v4
       - name: Build and Flash
         run: |
-          # set trực tiếp tới thư mục tools có sẵn (không sửa file trên server)
+
           export IDF_PATH=/mnt/hdd_WD10JPVT_1TB/p256GB/share-resource/.espressif/v5.5.4/esp-idf
           export IDF_TOOLS_ROOT=/mnt/hdd_WD10JPVT_1TB/p256GB/share-resource/.espressif/tools
           
-          # PATH tới python venv và các tool thực tế
+ 
           export PATH=$IDF_TOOLS_ROOT/python/v5.5.4/venv/bin:$IDF_TOOLS_ROOT/xtensa-esp-elf/bin:$IDF_TOOLS_ROOT/esp-clang/bin:$IDF_TOOLS_ROOT/cmake/bin:$IDF_TOOLS_ROOT/ninja:$PATH
           
-          # kiểm tra file constraints có ở chỗ này không
-          if [ ! -f "$IDF_TOOLS_ROOT/espidf.constraints.v5.5.txt" ]; then
-            echo "espidf.constraints.v5.5.txt not found in $IDF_TOOLS_ROOT"
-            ls -la "$IDF_TOOLS_ROOT"
-            exit 1
-          fi
-          
-          # vào thư mục project (nơi có CMakeLists.txt)
+
+
           cd $HOME/esp-idf-project/CICD_Pytest || { echo "Project dir not found"; exit 1; }
           test -f CMakeLists.txt || { echo "CMakeLists.txt not found in $(pwd)"; exit 1; }
           
-          # dùng python từ venv để chạy idf.py (an toàn nếu idf.py không nằm trong PATH)
+
           python "$IDF_PATH/tools/idf.py" set-target esp32s3
           python "$IDF_PATH/tools/idf.py" build
           python "$IDF_PATH/tools/idf.py" -p /dev/ttyACM0 flash
