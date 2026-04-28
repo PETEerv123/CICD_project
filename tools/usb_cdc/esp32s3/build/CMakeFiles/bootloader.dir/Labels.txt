@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/mnt/hdd_WD10JPVT_1TB/p256GB/ta.thuan.minh/esp-idf-project/SCRUM43-Write-python-script/tools/usb_cdc/esp32s3/build/CMakeFiles/bootloader
+/mnt/hdd_WD10JPVT_1TB/p256GB/ta.thuan.minh/esp-idf-project/SCRUM43-Write-python-script/tools/usb_cdc/esp32s3/build/CMakeFiles/bootloader.rule
+/mnt/hdd_WD10JPVT_1TB/p256GB/ta.thuan.minh/esp-idf-project/SCRUM43-Write-python-script/tools/usb_cdc/esp32s3/build/CMakeFiles/bootloader-complete.rule
+/mnt/hdd_WD10JPVT_1TB/p256GB/ta.thuan.minh/esp-idf-project/SCRUM43-Write-python-script/tools/usb_cdc/esp32s3/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+/mnt/hdd_WD10JPVT_1TB/p256GB/ta.thuan.minh/esp-idf-project/SCRUM43-Write-python-script/tools/usb_cdc/esp32s3/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/mnt/hdd_WD10JPVT_1TB/p256GB/ta.thuan.minh/esp-idf-project/SCRUM43-Write-python-script/tools/usb_cdc/esp32s3/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/mnt/hdd_WD10JPVT_1TB/p256GB/ta.thuan.minh/esp-idf-project/SCRUM43-Write-python-script/tools/usb_cdc/esp32s3/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/mnt/hdd_WD10JPVT_1TB/p256GB/ta.thuan.minh/esp-idf-project/SCRUM43-Write-python-script/tools/usb_cdc/esp32s3/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/mnt/hdd_WD10JPVT_1TB/p256GB/ta.thuan.minh/esp-idf-project/SCRUM43-Write-python-script/tools/usb_cdc/esp32s3/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/mnt/hdd_WD10JPVT_1TB/p256GB/ta.thuan.minh/esp-idf-project/SCRUM43-Write-python-script/tools/usb_cdc/esp32s3/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

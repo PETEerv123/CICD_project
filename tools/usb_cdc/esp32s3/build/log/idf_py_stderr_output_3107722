@@ -1,0 +1,5 @@
+Command: cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DPYTHON=/mnt/hdd_WD10JPVT_1TB/p256GB/share-resource/.espressif/tools/python/v5.5.4/venv/bin/python -DESP_PLATFORM=1 -DIDF_TARGET=esp32s3 -DCCACHE_ENABLE=0 /mnt/hdd_WD10JPVT_1TB/p256GB/ta.thuan.minh/esp-idf-project/SCRUM43-Write-python-script/tools/usb_cdc/esp32s3
+fatal: detected dubious ownership in repository at '/mnt/hdd_WD10JPVT_1TB/p256GB/share-resource/.espressif/v5.5.4/esp-idf'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /mnt/hdd_WD10JPVT_1TB/p256GB/share-resource/.espressif/v5.5.4/esp-idf

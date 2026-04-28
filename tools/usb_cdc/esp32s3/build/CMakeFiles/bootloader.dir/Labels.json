@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/mnt/hdd_WD10JPVT_1TB/p256GB/ta.thuan.minh/esp-idf-project/SCRUM43-Write-python-script/tools/usb_cdc/esp32s3/build/CMakeFiles/bootloader"
+		},
+		{
+			"file" : "/mnt/hdd_WD10JPVT_1TB/p256GB/ta.thuan.minh/esp-idf-project/SCRUM43-Write-python-script/tools/usb_cdc/esp32s3/build/CMakeFiles/bootloader.rule"
+		},
+		{
+			"file" : "/mnt/hdd_WD10JPVT_1TB/p256GB/ta.thuan.minh/esp-idf-project/SCRUM43-Write-python-script/tools/usb_cdc/esp32s3/build/CMakeFiles/bootloader-complete.rule"
+		},
+		{
+			"file" : "/mnt/hdd_WD10JPVT_1TB/p256GB/ta.thuan.minh/esp-idf-project/SCRUM43-Write-python-script/tools/usb_cdc/esp32s3/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule"
+		},
+		{
+			"file" : "/mnt/hdd_WD10JPVT_1TB/p256GB/ta.thuan.minh/esp-idf-project/SCRUM43-Write-python-script/tools/usb_cdc/esp32s3/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule"
+		},
+		{
+			"file" : "/mnt/hdd_WD10JPVT_1TB/p256GB/ta.thuan.minh/esp-idf-project/SCRUM43-Write-python-script/tools/usb_cdc/esp32s3/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule"
+		},
+		{
+			"file" : "/mnt/hdd_WD10JPVT_1TB/p256GB/ta.thuan.minh/esp-idf-project/SCRUM43-Write-python-script/tools/usb_cdc/esp32s3/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule"
+		},
+		{
+			"file" : "/mnt/hdd_WD10JPVT_1TB/p256GB/ta.thuan.minh/esp-idf-project/SCRUM43-Write-python-script/tools/usb_cdc/esp32s3/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule"
+		},
+		{
+			"file" : "/mnt/hdd_WD10JPVT_1TB/p256GB/ta.thuan.minh/esp-idf-project/SCRUM43-Write-python-script/tools/usb_cdc/esp32s3/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule"
+		},
+		{
+			"file" : "/mnt/hdd_WD10JPVT_1TB/p256GB/ta.thuan.minh/esp-idf-project/SCRUM43-Write-python-script/tools/usb_cdc/esp32s3/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"bootloader"
+		],
+		"name" : "bootloader"
+	}
+}
